@@ -1,12 +1,16 @@
 package com.example.sweater.domain;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message="Please fill the message")
     private String text;
     private String tag;
     @ManyToOne(fetch = FetchType.EAGER)
