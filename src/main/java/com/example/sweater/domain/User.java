@@ -16,20 +16,17 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @NotBlank(message="Поле имени не может быть пустым")
+    @NotBlank(message="Username cannot be empty")
     private String username;
-    @NotBlank(message="Поле пароля не может быть пустым")
+    @NotBlank(message="Password cannot be empty")
     private String password;
-    @Transient
-    @NotBlank(message="Поле подтверждения пароля не может быть пустым")
-    private String password2;
 
 
 
     private boolean active;
 
-    @Email(message = "Некорректный ввод э-почты")
-    @NotBlank(message="Поле э-почты не может быть пустым")
+    @Email(message = "Email is not correct")
+    @NotBlank(message="Email cannot be empty")
     private String email;
     private String activationCode;
 
@@ -121,14 +118,6 @@ public class User implements UserDetails {
 
     public void setActivationCode(String activationCode) {
         this.activationCode = activationCode;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
     }
 
 
