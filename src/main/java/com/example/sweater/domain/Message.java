@@ -3,6 +3,7 @@ package com.example.sweater.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Set;
 
 @Entity
 public class Message {
@@ -17,8 +18,6 @@ public class Message {
     @JoinColumn(name = "user_id")
     private User author;
     private String filename;
-
-
     public Message() {
     }
     public Message(String text, String tag, User user){
@@ -64,5 +63,6 @@ public class Message {
 
     public void setFilename(String filename) {
         this.filename = filename;
-    }
+    };
+
 }
